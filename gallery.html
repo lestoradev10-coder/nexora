@@ -7,7 +7,1947 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="assets/cdn.prod.website-files.com/6787c8325299a2370e04026f/css/nexora.css" rel="stylesheet" type="text/css">   <style>
+   .footer-top {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 60px;
+}.header-social-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: var(--brand--green);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.header-social-icon-wrapper:hover {
+    background: green!important; /* Darker shade on hover */
+    transform: scale(1.1);
+}
+
+.header-social-icon-wrapper .social-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}/* ============================================
+NAVBAR - NEXORA CUSTOM (navnexora prefix)
+============================================ */
+/* ============================================
+   HIDE FAVICON
+   ============================================ */
+   /* ============================================
+   FOOTER & CONTACT FORM - MOBILE RESPONSIVE
+   ============================================ */
+
+/* Contact Form - Mobile */
+/* ============================================
+   NEXORA CHATBOT WIDGET - MODERN & THEME MATCHED
+   Add this CSS to your homepage styles
+   ============================================ */
+
+/* ---- Floating Launcher Button ---- */
+.chat-launcher {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    background: #5E4CE6;
+    color: #fff;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    box-shadow: 0 12px 32px rgba(94, 76, 230, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    border: none;
+}
+.chat-launcher:hover {
+    transform: scale(1.08);
+    box-shadow: 0 16px 48px rgba(94, 76, 230, 0.45);
+}
+.chat-launcher .fa-comment-dots {
+    transition: transform 0.3s ease;
+}
+.chat-launcher:hover .fa-comment-dots {
+    transform: rotate(-15deg);
+}
+
+/* ---- Chat Window ---- */
+.chat-window {
+    position: fixed;
+    bottom: 110px;
+    right: 30px;
+    z-index: 9998;
+    width: 400px;
+    max-width: calc(100vw - 40px);
+    max-height: 600px;
+    height: 580px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.18);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Onest', sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    animation: slideUp 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.chat-window.open {
+    display: flex;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---- Header ---- */
+.chat-header {
+    background: #1A2E4A;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+    border-bottom: 2px solid rgba(94, 76, 230, 0.2);
+}
+.chat-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.chat-avatar {
+    width: 38px;
+    height: 38px;
+    background: #5E4CE6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.chat-header-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+.chat-header-status {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+.chat-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+.chat-close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ---- Messages Area ---- */
+.chat-messages {
+    flex: 1;
+    padding: 16px 18px;
+    overflow-y: auto;
+    background: #f8f9fc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.chat-messages::-webkit-scrollbar {
+    width: 4px;
+}
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+    background: #d0d5dd;
+    border-radius: 4px;
+}
+
+/* ---- Message Bubbles ---- */
+.message {
+    display: flex;
+    max-width: 85%;
+    animation: msgIn 0.3s ease;
+}
+.message.bot {
+    align-self: flex-start;
+}
+.message.user {
+    align-self: flex-end;
+}
+.message-bubble {
+    padding: 10px 16px;
+    border-radius: 14px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+.message.bot .message-bubble {
+    background: #ffffff;
+    color: #1A2E4A;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #e8ecf0;
+}
+.message.user .message-bubble {
+    background: #5E4CE6;
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+}
+
+@keyframes msgIn {
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Quick Replies ---- */
+.quick-replies {
+    padding: 10px 14px 8px 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: #ffffff;
+    border-top: 1px solid #edf0f5;
+    flex-shrink: 0;
+}
+.quick-btn {
+    background: #f0f2f6;
+    border: none;
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #1A2E4A;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Onest', sans-serif;
+    white-space: nowrap;
+}
+.quick-btn:hover {
+    background: #e4e7ef;
+    transform: scale(1.03);
+}
+.quick-btn.primary {
+    background: #5E4CE6;
+    color: #ffffff;
+}
+.quick-btn.primary:hover {
+    background: #4a3ac9;
+}
+
+/* ---- Input Area ---- */
+.chat-input-area {
+    display: flex;
+    padding: 10px 14px 14px 14px;
+    gap: 10px;
+    background: #ffffff;
+    border-top: 1px solid #edf0f5;
+    flex-shrink: 0;
+}
+.chat-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 1.5px solid #e0e4ea;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-family: 'Onest', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #f8f9fc;
+}
+.chat-input:focus {
+    border-color: #5E4CE6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(94, 76, 230, 0.08);
+}
+.chat-send-btn {
+    background: #5E4CE6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+.chat-send-btn:hover {
+    background: #4a3ac9;
+    transform: scale(1.05);
+}
+.chat-send-btn i {
+    font-size: 1rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 500px) {
+    .chat-window {
+        bottom: 90px;
+        right: 10px;
+        width: calc(100vw - 20px);
+        height: 520px;
+        max-height: 70vh;
+        border-radius: 16px;
+    }
+    .chat-launcher {
+        width: 54px;
+        height: 54px;
+        bottom: 20px;
+        right: 20px;
+    }
+    .chat-launcher i {
+        font-size: 1.4rem;
+    }
+    .quick-btn {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+    .message-bubble {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+    .chat-header-title {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 991px) {
+    .cta-form {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .cta-form .form-group {
+        grid-column: span 1 !important;
+    }
+    
+    .cta-form-wrapper {
+        padding: 1.5rem !important;
+    }
+    
+    .cta-form .form-group .btn-submit,
+    .cta-form .form-group .btn-call {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .cta-form .form-group {
+        flex-wrap: wrap !important;
+    }
+    
+    .cta-header h2 {
+        font-size: 2.2rem !important;
+        line-height: 2.8rem !important;
+        text-align: center !important;
+    }
+    
+    .cta-header p {
+        text-align: center !important;
+        font-size: 1rem !important;
+        padding: 0 0.5rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .cta-form-wrapper {
+        padding: 1.25rem !important;
+        border-radius: 1rem !important;
+    }
+    
+    .cta-form {
+        gap: 0.85rem !important;
+    }
+    
+    .cta-form .form-input,
+    .cta-form .form-select,
+    .cta-form .form-textarea {
+        font-size: 0.95rem !important;
+        padding: 0.7rem 1rem !important;
+        border-radius: 8px !important;
+    }
+    
+    .cta-form .form-group label {
+        font-size: 0.75rem !important;
+    }
+    
+    .cta-header h2 {
+        font-size: 2rem !important;
+        line-height: 2.6rem !important;
+    }
+    
+    .cta-header p {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    .btn-submit,
+    .btn-call {
+        padding: 0.8rem 1.8rem !important;
+        font-size: 0.9rem !important;
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .cta-footer-note p {
+        font-size: 0.75rem !important;
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-form-wrapper {
+        padding: 0.75rem !important;
+        border-radius: 0.75rem !important;
+    }
+    
+    .cta-form {
+        gap: 0.65rem !important;
+    }
+    
+    .cta-form .form-input,
+    .cta-form .form-select,
+    .cta-form .form-textarea {
+        font-size: 0.85rem !important;
+        padding: 0.6rem 0.8rem !important;
+        border-radius: 6px !important;
+    }
+    
+    .cta-form .form-group label {
+        font-size: 0.7rem !important;
+    }
+    
+    .cta-header h2 {
+        font-size: 1.6rem !important;
+        line-height: 2.2rem !important;
+    }
+    
+    .cta-header p {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .btn-submit,
+    .btn-call {
+        padding: 0.6rem 1.2rem !important;
+        font-size: 0.8rem !important;
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .cta-footer-note p {
+        font-size: 0.7rem !important;
+        text-align: center !important;
+    }
+}
+
+/* Footer - Mobile Responsive */
+@media (max-width: 991px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .footer-top-content {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .footer-form {
+        flex-direction: column !important;
+        width: 100% !important;
+        align-items: stretch !important;
+    }
+    
+    .footer-form .input.is-footer {
+        width: 100% !important;
+        min-width: auto !important;
+        text-align: center !important;
+        padding: 0.8rem 1rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .footer-form .button {
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.8rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .footer-right-social-link-wrapper {
+        justify-content: center !important;
+        width: 100% !important;
+    }
+    
+    .footer-left-content-wrapper {
+        grid-column: span 2 !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+    .footer-left-content-wrapper p {
+        text-align: center !important;
+        max-width: 100% !important;
+    }
+    
+    .footer-bottom-content {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.75rem !important;
+    }
+    
+    .footer-bottom-content > div {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+    
+    .footer-bottom-content div:last-child {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+    }
+    
+    .footer-bottom-content div:last-child a,
+    .footer-bottom-content div:last-child span {
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .footer-left-content-wrapper {
+        grid-column: span 2 !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+    .footer-link-wrapper {
+        gap: 0.75rem !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .footer-link-list {
+        gap: 0.5rem !important;
+        align-items: center !important;
+    }
+    
+    .footer-link {
+        font-size: 0.9rem !important;
+        text-align: center !important;
+    }
+    
+    .footer-top-content {
+        padding: 1.25rem !important;
+        border-radius: 0.75rem !important;
+    }
+    
+    .footer-brand-logo-wrapper img {
+        height: 70px !important;
+    }
+    
+    .footer-bottom-content div:last-child a,
+    .footer-bottom-content div:last-child span {
+        font-size: 0.8rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+    
+    .footer-left-content-wrapper {
+        grid-column: span 1 !important;
+        text-align: center !important;
+        align-items: center !important;
+    }
+    
+    .footer-link-wrapper {
+        gap: 0.5rem !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .footer-link-wrapper .text-size-small {
+        font-size: 0.95rem !important;
+    }
+    
+    .footer-link-list {
+        gap: 0.4rem !important;
+        align-items: center !important;
+    }
+    
+    .footer-link {
+        font-size: 0.85rem !important;
+        text-align: center !important;
+    }
+    
+    .footer-top-content {
+        padding: 1rem !important;
+        border-radius: 0.5rem !important;
+    }
+    
+    .footer-top-content .text-size-small {
+        font-size: 0.8rem !important;
+    }
+    
+    .footer-social-icon-wrapper {
+        width: 2.2rem !important;
+        height: 2.2rem !important;
+    }
+    
+    .footer-social-icon-wrapper img {
+        width: 1rem !important;
+    }
+    
+    .footer-brand-logo-wrapper img {
+        height: 55px !important;
+    }
+    
+    .footer-bottom-content {
+        padding: 0.75rem 0 !important;
+    }
+    
+    .footer-bottom-content div {
+        font-size: 0.7rem !important;
+        text-align: center !important;
+    }
+    
+    .footer-bottom-content a {
+        font-size: 0.7rem !important;
+    }
+    
+    .footer-bottom-content span {
+        font-size: 0.7rem !important;
+    }
+    
+    .footer-bottom-content div:last-child {
+        gap: 0.4rem !important;
+        justify-content: center !important;
+    }
+    
+    .footer-bottom-content div:last-child a,
+    .footer-bottom-content div:last-child span {
+        font-size: 0.7rem !important;
+    }
+    
+    /* Contact & Social column - mobile */
+    .footer-link-wrapper:last-child {
+        gap: 0.5rem !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+    
+    .footer-link-wrapper:last-child > div[style*="display: flex"] {
+        gap: 0.5rem !important;
+        justify-content: center !important;
+    }
+    
+    .footer-link-wrapper:last-child .button {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.8rem !important;
+        width: 100% !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    .footer-link-wrapper:last-child a[style*="color: #5E4CE6"] {
+        font-size: 0.8rem !important;
+        text-align: center !important;
+        display: block !important;
+    }
+    
+    /* Contact details icons - mobile */
+    .footer-link-wrapper:last-child > div[style*="display: flex"][style*="gap: 0.75rem"] {
+        justify-content: center !important;
+        width: 100% !important;
+    }
+    
+    .footer-link-wrapper:last-child > div[style*="display: flex"][style*="gap: 0.75rem"] > div:first-child {
+        width: 1.8rem !important;
+        height: 1.8rem !important;
+    }
+    
+    .footer-link-wrapper:last-child > div[style*="display: flex"][style*="gap: 0.75rem"] i {
+        font-size: 0.65rem !important;
+    }
+    
+    .footer-link-wrapper:last-child > div[style*="display: flex"][style*="gap: 0.75rem"] > div:last-child div:first-child {
+        font-size: 0.55rem !important;
+    }
+    
+    .footer-link-wrapper:last-child > div[style*="display: flex"][style*="gap: 0.75rem"] > div:last-child div:last-child {
+        font-size: 0.8rem !important;
+    }
+}
+link[rel="shortcut icon"],
+link[rel="apple-touch-icon"],
+link[rel="icon"] {
+    display: none !important;
+}
+.testimonial-card .testimonial-image-wrapper {
+    margin-left: 20px !important;
+}
+/* Main Navbar */
+.navnexora-navbar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: #1A2E4A !important;
+    padding: 16px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.navnexora-navbar.scrolled {
+    padding: 8px 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Container */
+.navnexora-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* LEFT: Logo */
+.navnexora-left-content {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navnexora-brand-logo-wrapper {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-right: 50px;
+}
+
+.navnexora-brand-logo {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* RIGHT: Navigation Wrapper */
+.navnexora-menu-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+}
+
+/* Navigation Menu - DESKTOP */
+.navnexora-menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Nav Links - LARGER FONT SIZE */
+.navnexora-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 8px 20px !important;
+    font-weight: 500 !important;
+    font-size: 1.05rem !important;
+    line-height: 1.6rem !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+    font-family: var(--font--gobal-font, Onest, sans-serif) !important;
+    white-space: nowrap !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    letter-spacing: 0.02em;
+}
+
+.navnexora-link:hover {
+    color: #ffffff !important;
+}
+
+.navnexora-link.active {
+    color: #5E4CE6 !important;
+}
+
+/* Dropdown Toggle - LARGER FONT SIZE */
+.navnexora-dropdown-toggle {
+    color: rgba(255, 255, 255, 0.85) !important;
+    padding: 8px 20px !important;
+    font-weight: 500 !important;
+    font-size: 1.05rem !important;
+    line-height: 1.6rem !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-family: var(--font--gobal-font, Onest, sans-serif) !important;
+    background: none !important;
+    border: none !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.02em;
+}
+
+.navnexora-dropdown-toggle:hover {
+    color: #ffffff !important;
+}
+
+.navnexora-dropdown-icon {
+    font-size: 0.7rem !important;
+    transition: transform 0.3s ease !important;
+}
+
+.navnexora-dropdown-icon.open {
+    transform: rotate(180deg) !important;
+}
+
+/* Dropdown List - DESKTOP */
+.navnexora-dropdown-list {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #ffffff !important;
+    min-width: 270px;
+    border-radius: 12px;
+    padding: 8px 0;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.navnexora-dropdown-list.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.navnexora-dropdown-link {
+    color: #1A2E4A !important;
+    padding: 12px 24px;
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: var(--font--gobal-font, Onest, sans-serif);
+    border-left: 3px solid transparent;
+    white-space: nowrap;
+}
+
+.navnexora-dropdown-link:hover {
+    background: #f5f3ff;
+    color: #5E4CE6 !important;
+    border-left-color: #5E4CE6;
+}
+
+.navnexora-dropdown-link i {
+    margin-right: 10px;
+    color: #5E4CE6;
+    font-size: 0.85rem;
+    width: 18px;
+    text-align: center;
+}
+
+/* Desktop CTA Button - Get a Quote (SMALLER, PROFESSIONAL) */
+.navnexora-cta-button {
+    background: #5E4CE6 !important;
+    color: #ffffff !important;
+    padding: 8px 22px !important;
+    border-radius: 50px !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    font-family: var(--font--gobal-font, Onest, sans-serif) !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    margin-left: 12px !important;
+    letter-spacing: 0.03em;
+}
+
+.navnexora-cta-button:hover {
+    background: #4a3ac9 !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 4px 20px rgba(94, 76, 230, 0.4) !important;
+}
+
+.navnexora-cta-button i {
+    font-size: 0.75rem !important;
+}
+
+.navnexora-cta-button.mobile-only {
+    display: none !important;
+}
+
+/* Hamburger Menu Button - HIDDEN ON DESKTOP, VISIBLE ON MOBILE */
+.navnexora-menu-button {
+    display: none !important;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 4px;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.navnexora-menu-line-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.navnexora-menu-line {
+    width: 26px;
+    height: 2.5px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.navnexora-menu-line.top.open {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.navnexora-menu-line.middle.open {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.navnexora-menu-line.last.open {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ============================================
+MOBILE RESPONSIVE - PROFESSIONAL DESIGN
+============================================ */
+@media (max-width: 991px) {
+    /* Show hamburger button */
+    .navnexora-menu-button {
+        display: block !important;
+    }
+
+    /* Hide desktop CTA */
+    .navnexora-cta-button.desktop-only {
+        display: none !important;
+    }
+
+    /* Show mobile CTA inside menu - PROFESSIONAL */
+    .navnexora-cta-button.mobile-only {
+        display: inline-flex !important;
+        width: auto !important;
+        justify-content: center;
+        padding: 12px 28px !important;
+        font-size: 0.9rem !important;
+        margin: 16px 20px 8px 20px !important;
+        background: #5E4CE6 !important;
+        border-radius: 50px !important;
+        font-weight: 600 !important;
+        align-self: flex-start !important;
+    }
+
+    /* Mobile menu - hidden by default, shown when active */
+    .navnexora-menu {
+        display: none !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1A2E4A;
+        padding: 20px 24px !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        align-items: stretch;
+        width: 100% !important;
+        max-width: 100% !important;
+        z-index: 1000;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        gap: 0 !important;
+    }
+
+    .navnexora-menu.active {
+        display: flex !important;
+    }
+
+    /* Mobile nav links - PROFESSIONAL STYLING */
+    .navnexora-link {
+        padding: 14px 16px !important;
+        width: 100%;
+        font-size: 1.05rem !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        white-space: normal;
+        color: rgba(255, 255, 255, 0.85) !important;
+        border-radius: 8px;
+        transition: background 0.3s ease, color 0.3s ease;
+        margin: 0 !important;
+    }
+
+    .navnexora-link:hover {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    .navnexora-link.active {
+        color: #5E4CE6 !important;
+        background: rgba(94, 76, 230, 0.12);
+    }
+
+    /* Mobile dropdown */
+    .navnexora-dropdown {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    .navnexora-dropdown-toggle {
+        padding: 14px 16px !important;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 1.05rem !important;
+        white-space: normal;
+        color: rgba(255, 255, 255, 0.85) !important;
+        border-radius: 8px;
+        transition: background 0.3s ease;
+        margin: 0 !important;
+    }
+
+    .navnexora-dropdown-toggle:hover {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* Mobile dropdown list - LIGHT BACKGROUND */
+    .navnexora-dropdown-list {
+        position: static !important;
+        transform: none !important;
+        left: auto !important;
+        top: auto !important;
+        background: #ffffff !important;
+        min-width: auto !important;
+        border-radius: 10px !important;
+        padding: 6px 0 !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: none !important;
+        border: 1px solid rgba(0, 0, 0, 0.06) !important;
+        width: 100% !important;
+        margin: 8px 0 4px 0 !important;
+    }
+
+    .navnexora-dropdown-list.active {
+        display: block !important;
+    }
+
+    .navnexora-dropdown-link {
+        color: #1A2E4A !important;
+        padding: 12px 20px !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+        border-left: 3px solid transparent !important;
+        white-space: normal !important;
+        font-size: 0.95rem !important;
+        background: #ffffff !important;
+        transition: background 0.2s ease, color 0.2s ease;
+        margin: 0 !important;
+        border-radius: 0;
+    }
+
+    .navnexora-dropdown-link:last-child {
+        border-bottom: none !important;
+    }
+
+    .navnexora-dropdown-link:hover {
+        background: #f5f3ff !important;
+        color: #5E4CE6 !important;
+        border-left-color: #5E4CE6 !important;
+    }
+
+    .navnexora-dropdown-link i {
+        color: #5E4CE6 !important;
+        margin-right: 10px;
+        font-size: 0.85rem;
+        width: 18px;
+        text-align: center;
+    }
+
+    /* Mobile container padding */
+    .navnexora-container {
+        padding: 0 16px;
+    }
+
+    .navnexora-brand-logo {
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navnexora-container {
+        padding: 0 14px;
+    }
+
+    .navnexora-brand-logo {
+        height: 55px;
+    }
+
+    .navnexora-menu {
+        padding: 16px 18px !important;
+    }
+
+    .navnexora-link {
+        font-size: 0.95rem !important;
+        padding: 12px 14px !important;
+    }
+
+    .navnexora-dropdown-toggle {
+        font-size: 0.95rem !important;
+        padding: 12px 14px !important;
+    }
+
+    .navnexora-dropdown-link {
+        font-size: 0.9rem !important;
+        padding: 10px 16px !important;
+    }
+
+    .navnexora-cta-button.mobile-only {
+        padding: 10px 22px !important;
+        font-size: 0.85rem !important;
+        margin: 12px 14px 6px 14px !important;
+        align-self: stretch !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+
+    .navnexora-menu-line {
+        width: 22px;
+        height: 2px;
+    }
+
+    .navnexora-menu-line-wrapper {
+        gap: 4px;
+    }
+}
+
+/* Body padding for fixed navbar */
+body {
+    padding-top: 82px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 66px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+}
+    /* ============================================
+   HERO SECTION - MARGIN TOP
+   ============================================ */
+.section-header {
+    margin-top: 100px;
+}
+
+@media (max-width: 991px) {
+    .section-header {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-header {
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-header {
+        margin-top: 80px;
+    }
+}  /* ============================================
+   HERO TITLE - MOBILE FIX (Slight Reduction)
+   ============================================ */
+
+/* Mobile: Slightly reduce "Tomorrow" size */
+@media (max-width: 768px) {
+    .hero-title-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+    }
+    
+    .hero-title-wrapper .heading-style-h1.is-header {
+        font-size: 4rem !important;
+        line-height: 3rem !important;
+        white-space: normal !important;
+        margin-bottom: -0.3rem !important;
+    }
+    
+    .hero-title-wrapper span {
+        font-size: 4rem !important;
+        line-height: 3.5rem !important;
+        display: block !important;
+        margin-top: 0 !important;
+    }
+    
+    .hero-title-wrapper span i {
+        font-size: 4rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title-wrapper .heading-style-h1.is-header {
+        font-size: 3rem !important;
+        line-height: 3.5rem !important;
+        margin-bottom: -0.2rem !important;
+    }
+    
+    .hero-title-wrapper span {
+        font-size: 3rem !important;
+        line-height: 3rem !important;
+    }
+    
+    .hero-title-wrapper span i {
+        font-size: 3rem !important;
+    }
+} /* ============================================
+   SOCIAL ICONS - BLUE THEME
+   ============================================ */
+
+/* Change social icon wrapper background to blue */
+.header-social-icon-wrapper {
+    background: #1A2E4A !important; /* Deep navy blue */
+    border-radius: 100%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.header-social-icon-wrapper:hover {
+    transform: scale(1.1);
+    background: #5E4CE6 !important; /* Purple on hover */
+}
+
+/* Make icons white inside blue circle */
+.header-social-icon-wrapper .social-icon {
+    filter: brightness(0) invert(1);
+    width: 1.2rem;
+    height: 1.2rem;
+} /* ============================================
+           RESET - PREVENT HORIZONTAL SCROLL
+           ============================================ */
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            margin: 0;
+            padding: 0;
+        }
+
+        .page-wrapper {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+        }
+
+        /* ============================================
+           CTA FORM STYLES
+           ============================================ */
+        .cta-form-wrapper {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+        }
+
+        .cta-form-wrapper:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -10px rgba(94, 76, 230, 0.15) !important;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            background: #f8f9fa !important;
+            border: 2px solid transparent !important;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: #5E4CE6 !important;
+            background: #ffffff !important;
+            transform: scale(1.01);
+            box-shadow: 0 10px 20px rgba(94, 76, 230, 0.1) !important;
+        }
+
+        .btn-submit {
+            position: relative;
+            background: linear-gradient(135deg, #5E4CE6, #4a3ac9) !important;
+            transition: all 0.4s ease !important;
+        }
+
+        .btn-submit:hover {
+            letter-spacing: 1px;
+        }
+
+        .form-group label {
+            transition: color 0.3s ease;
+        }
+
+        .form-group:focus-within label {
+            color: #5E4CE6;
+        }
+
+        /* ============================================
+           LOGO SLIDER ANIMATION
+           ============================================ */
+        @keyframes scrollLogos {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-slider-wrapper:hover .logo-track {
+            animation-play-state: paused;
+        }
+
+        .logo-item:hover {
+            opacity: 1 !important;
+            filter: grayscale(0) !important;
+        }
+
+        /* ============================================
+           PRODUCT & WHY CHOOSE US STYLES
+           ============================================ */
+        .product-top-content,
+        .why-choose-us-header {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .product-top-content p,
+        .why-choose-us-header p {
+            width: 100%;
+            max-width: 1000px;
+            margin: 1.5rem auto 0;
+            color: #555;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .product-top-content {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        .product-top-content p {
+            max-width: 1000px !important;
+            width: 100% !important;
+            margin: 1.5rem auto 0 !important;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* ==========================
+           CARD STYLING
+        ========================== */
+        .product-item {
+            display: block;
+            border-radius: 1.5rem;
+            overflow: hidden;
+        }
+
+        .product-image-wrapper {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease;
+        }
+
+        .product-item:hover .product-image {
+            transform: scale(1.08);
+        }
+
+        .product-card-content-wrapper {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background:
+                linear-gradient(to top,
+                    rgba(0, 0, 0, 0.7) 0%,
+                    rgba(0, 0, 0, 0.3) 35%,
+                    rgba(0, 0, 0, 0.15) 100%);
+        }
+
+        .product-top-content-wrapper {
+            padding: 2rem;
+            width: 100%;
+        }
+
+        .product-price-content {
+            background: transparent !important;
+            padding: 0 !important;
+        }
+
+        .product-price-content .heading-style-h4 {
+            color: #fff !important;
+            font-size: 2rem !important;
+            line-height: 2.5rem !important;
+            font-weight: 600;
+            margin: 0;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-content-weapper {
+            background: rgba(255, 255, 255, 0.95) !important;
+            padding: 1.5rem !important;
+            width: 100%;
+        }
+
+        .product-content-weapper p {
+            margin: 0;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .product-details-button {
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+        }
+
+        .product-details-button h5 {
+            color: #fff !important;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            margin: 0;
+        }
+
+        /* ==========================
+           WHY CHOOSE US
+        ========================== */
+        .why-choose-us-header {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+        }
+
+        .why-title {
+            margin-bottom: 1.5rem;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+        }
+
+        .why-description {
+            max-width: 780px;
+            margin: 0 auto;
+            color: var(--neutral--black-700);
+            line-height: 1.8;
+            font-size: 1.125rem;
+        }
+
+        .why-choose-us-header p {
+            max-width: 850px;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        .scroll-rise-up {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+
+        .scroll-rise-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes shimmer-border {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        /* ============================================
+           SERVICE SPLIT LAYOUT
+           ============================================ */
+        .service-split-layout {
+            display: flex;
+            align-items: stretch;
+            gap: 60px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .service-split-left {
+            flex: 1;
+        }
+
+        .service-split-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        }
+
+        .service-split-right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .text-size-regular {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media screen and (max-width: 991px) {
+            .product-image-wrapper {
+                height: 420px;
+            }
+
+            .product-price-content .heading-style-h4 {
+                font-size: 1.75rem !important;
+                line-height: 2.2rem !important;
+            }
+
+            .product-top-content p {
+                max-width: 700px;
+            }
+
+            div[style*="grid-template-columns:1fr 1fr 1fr"] {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1.25rem !important;
+            }
+
+            .service-split-layout {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .product-top-content h2 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+
+            .product-top-content p {
+                font-size: 1rem;
+                line-height: 1.7;
+                padding: 0 1rem;
+            }
+
+            .product-image-wrapper {
+                height: 380px;
+            }
+
+            .product-top-content-wrapper {
+                padding: 1.5rem;
+            }
+
+            .product-price-content .heading-style-h4 {
+                font-size: 1.5rem !important;
+                line-height: 2rem !important;
+            }
+
+            .product-details-button {
+                top: 1.5rem;
+                right: 1.5rem;
+            }
+
+            .product-content-weapper {
+                padding: 1.25rem !important;
+            }
+
+            .why-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+
+            .why-description {
+                font-size: 1rem;
+                line-height: 1.7;
+                padding: 0 1rem;
+            }
+
+            div[style*="grid-template-columns:1fr 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .benefit-card-3d {
+                padding: 1.5rem 1.25rem !important;
+            }
+
+            .service-split-layout {
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .product-image-wrapper {
+                height: 300px;
+            }
+
+            .product-price-content .heading-style-h4 {
+                font-size: 1.25rem !important;
+                line-height: 1.7rem !important;
+            }
+
+            .product-top-content-wrapper {
+                padding: 1rem;
+            }
+
+            .product-content-weapper {
+                padding: 0.75rem !important;
+            }
+
+            .product-content-weapper p {
+                font-size: 0.85rem !important;
+                line-height: 1.5 !important;
+            }
+
+            .heading-style-h2 {
+                font-size: 1.9rem !important;
+                line-height: 2.4rem !important;
+            }
+
+            .button-row {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .button-row .button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ============================================
+           KEEP "Building Better Tomorrow" ON ONE LINE
+           ============================================ */
+        .heading-style-h1.is-header {
+            font-size: 7rem !important;
+            line-height: 8rem !important;
+            white-space: nowrap !important;
+        }
+
+        @media (max-width: 1024px) {
+            .heading-style-h1.is-header {
+                font-size: 4rem !important;
+                line-height: 4.5rem !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .heading-style-h1.is-header {
+                font-size: 2.8rem !important;
+                line-height: 3.2rem !important;
+                white-space: normal !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .heading-style-h1.is-header {
+                font-size: 2.2rem !important;
+                line-height: 2.6rem !important;
+                white-space: normal !important;
+            }
+        }
+
+        /* ============================================
+           NUMBER ITEMS
+           ============================================ */
+        .number-item {
+            height: auto !important;
+            min-height: 120px !important;
+            padding: 20px 15px !important;
+        }
+
+        .service-tracker {
+            height: auto !important;
+            min-height: auto !important;
+        }
+
+        .number-content-wrapper {
+            gap: 4px !important;
+        }
+
+        .number-top-content {
+            margin-bottom: 4px !important;
+        }
+
+        .service-top-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto 3rem auto;
+            gap: 1.5rem;
+            margin-bottom: 0px !important;
+        }
+
+        .service-top-content .text-size-regular {
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            margin: 0;
+            text-align: center;
+        }
+
+        .service-top-content .heading-style-h2 {
+            margin: 0;
+        }
+
+        .number-item {
+            padding: 24px;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .button-row {
+                flex-direction: column;
+                width: 100%;
+            }
+            .button-row .button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ============================================
+           FLOATING WHATSAPP BUTTON
+           ============================================ */
+        .floating-whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 9998;
+            background: #25D366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulse-whatsapp 2s ease-in-out infinite;
+            border: none;
+            cursor: pointer;
+        }
+
+        .floating-whatsapp-btn:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+        }
+
+        @keyframes pulse-whatsapp {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 8px 32px rgba(37, 211, 102, 0.45);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-whatsapp-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floating-whatsapp-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 1.3rem;
+                bottom: 16px;
+                left: 16px;
+            }
+        }
+
+        /* ============================================
+           HIDE WEBFLOW BADGE
+           ============================================ */
+        .w-webflow-badge {
+            display: none !important;
+        }
+
+        /* ============================================
+           NEWS ANIMATION
+           ============================================ */
+        @keyframes newsFadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .news-item:hover .news-thumb img {
+            transform: scale(1.05);
+        }
+        .news-item:hover h4 {
+            color: #5E4CE6;
+        }
+
+        @media screen and (max-width: 991px) {
+            .news-stack {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+            .news-thumb {
+                height: 180px !important;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .news-stack {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+            .news-thumb {
+                height: 180px !important;
+            }
+            .news-item h4 {
+                font-size: 1rem !important;
+                line-height: 1.3rem !important;
+            }
+            .news-item p {
+                font-size: 0.85rem !important;
+            }
+        }
+    </style>  
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Onest', sans-serif; background: #fafbfc; padding-top: 100px; }
@@ -19,32 +1959,7 @@
         .gradient-text { background: linear-gradient(135deg, #5E4CE6, #4a3ac9); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .floating-whatsapp-btn { position: fixed; bottom: 30px; left: 30px; z-index: 9998; background: #25D366; color: #fff; width: 60px; height: 60px; border-radius: 50%; font-size: 2rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(37,211,102,0.45); transition: all 0.3s ease; animation: pulse-whatsapp 2s ease-in-out infinite; text-decoration: none; }
         .floating-whatsapp-btn:hover { transform: scale(1.1) translateY(-3px); box-shadow: 0 12px 40px rgba(37,211,102,0.6); }
-        @keyframes pulse-whatsapp { 0%,100% { transform: scale(1); box-shadow: 0 8px 32px rgba(37,211,102,0.45); } 50% { transform: scale(1.05); box-shadow: 0 12px 40px rgba(37,211,102,0.6); } }
-        @media (max-width: 640px) { .floating-whatsapp-btn { width: 50px; height: 50px; font-size: 1.6rem; bottom: 20px; left: 20px; } body { padding-top: 80px; } }
-        .navnexora-navbar { position: fixed !important; top: 0; left: 0; right: 0; z-index: 9999; background: #1A2E4A !important; padding: 16px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.15); transition: all 0.3s ease; }
-        .navnexora-navbar.scrolled { padding: 8px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.25); }
-        .navnexora-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
-        .navnexora-brand-logo { height: 90px; width: auto; object-fit: contain; }
-        .navnexora-menu { display: flex; align-items: center; gap: 6px; list-style: none; margin: 0; padding: 0; }
-        .navnexora-link { color: rgba(255,255,255,0.85); padding: 8px 20px; font-weight: 500; font-size: 1.05rem; text-decoration: none; transition: color 0.3s; }
-        .navnexora-link:hover { color: #fff; }
-        .navnexora-link.active { color: #5E4CE6; }
-        .navnexora-cta-button { background: #5E4CE6; color: #fff; padding: 8px 22px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; margin-left: 12px; }
-        .navnexora-cta-button:hover { background: #4a3ac9; transform: scale(1.03); box-shadow: 0 4px 20px rgba(94,76,230,0.4); }
-        .navnexora-menu-button { display: none; background: none; border: none; cursor: pointer; padding: 6px 4px; flex-shrink: 0; margin-left: 12px; }
-        .navnexora-menu-line-wrapper { display: flex; flex-direction: column; gap: 5px; align-items: center; }
-        .navnexora-menu-line { width: 26px; height: 2.5px; background: #fff; border-radius: 2px; transition: all 0.3s; }
-        .navnexora-menu-line.top.open { transform: rotate(45deg) translate(5px,5px); }
-        .navnexora-menu-line.middle.open { opacity: 0; transform: scaleX(0); }
-        .navnexora-menu-line.last.open { transform: rotate(-45deg) translate(5px,-5px); }
-        @media (max-width: 991px) { .navnexora-menu-button { display: block !important; } .navnexora-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #1A2E4A; padding: 20px 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); border-top: 1px solid rgba(255,255,255,0.06); width: 100%; max-height: calc(100vh - 70px); overflow-y: auto; gap: 0; } .navnexora-menu.active { display: flex; } .navnexora-link { padding: 14px 16px; width: 100%; border-bottom: 1px solid rgba(255,255,255,0.06); } .navnexora-cta-button.desktop-only { display: none; } .navnexora-cta-button.mobile-only { display: inline-flex !important; width: auto; justify-content: center; padding: 12px 28px; font-size: 0.9rem; margin: 16px 20px 8px 20px; align-self: flex-start; } }
-        @media (max-width: 480px) { .navnexora-brand-logo { height: 55px; } }
-        .footer-link { color: rgba(255,255,255,0.7); transition: color 0.2s; }
-        .footer-link:hover { color: #5E4CE6; }
-        .footer-icon-box { background: #5E4CE6; border-radius: 100%; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .footer-icon-box i { color: #fff; font-size: 0.75rem; }
-        .btn-primary { background: #5E4CE6; transition: all 0.25s ease; }
-        .btn-primary:hover { background: #4a3ac9; transform: scale(1.02); box-shadow: 0 4px 16px rgba(94,76,230,0.35); }
+        
         .w-webflow-badge { display: none !important; }
         .gallery-img { transition: all 0.4s ease; }
         .gallery-img:hover { transform: scale(1.03); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
@@ -55,53 +1970,87 @@
 <!-- ============================================
      NAVBAR
      ============================================ -->
-<div class="navnexora-navbar" id="navbar">
-  <div class="navnexora-container">
-    <div class="flex items-center flex-shrink-0">
-      <a href="index.html" class="flex items-center no-underline mr-8">
-        <img src="logo.png" loading="lazy" alt="Nexora Solution Hub Logo" class="navnexora-brand-logo">
-      </a>
-    </div>
-    <div class="flex items-center flex-1 justify-end">
-      <nav class="navnexora-menu" id="navMenu">
-        <a href="index.html" class="navnexora-link">Home</a>
-        <a href="aboutus.html" class="navnexora-link">About Us</a>
-        <div class="relative">
-          <button class="text-white/85 px-5 py-2 font-medium text-[1.05rem] flex items-center gap-2 hover:text-white" id="servicesDropdown">
-            Services <i class="fas fa-chevron-down text-xs transition-transform"></i>
-          </button>
-          <div class="absolute left-1/2 -translate-x-1/2 top-full mt-2 bg-white min-w-[270px] rounded-xl shadow-xl opacity-0 invisible transition-all duration-300 border border-black/5" id="servicesDropdownList">
-            <a href="agricultureextensionservices.html" class="block px-6 py-3 text-deep font-medium hover:bg-[#f5f3ff] hover:text-accent border-l-3 border-transparent hover:border-accent"><i class="fas fa-seedling text-accent mr-2"></i> Agriculture Extension</a>
-            <a href="temporaryworkforcesupply.html" class="block px-6 py-3 text-deep font-medium hover:bg-[#f5f3ff] hover:text-accent border-l-3 border-transparent hover:border-accent"><i class="fas fa-users text-accent mr-2"></i> Temporary Workforce</a>
-            <a href="commercialcleaningservices.html" class="block px-6 py-3 text-deep font-medium hover:bg-[#f5f3ff] hover:text-accent border-l-3 border-transparent hover:border-accent"><i class="fas fa-broom text-accent mr-2"></i> Commercial Cleaning</a>
-          </div>
-        </div>
-        <a href="industries.html" class="navnexora-link">Industries</a>
-        <a href="faq.html" class="navnexora-link">FAQ</a>
-        <a href="contact.html" class="navnexora-link">Contact</a>
-        <a href="get-a-quote.html" class="navnexora-cta-button mobile-only"><i class="fas fa-paper-plane"></i> Get a Quote</a>
-      </nav>
-      <a href="get-a-quote.html" class="navnexora-cta-button desktop-only"><i class="fas fa-paper-plane"></i> Get a Quote</a>
-      <button class="navnexora-menu-button" id="hamburgerBtn" aria-label="Toggle navigation">
-        <div class="navnexora-menu-line-wrapper">
-          <div class="navnexora-menu-line top" id="lineTop"></div>
-          <div class="navnexora-menu-line middle" id="lineMiddle"></div>
-          <div class="navnexora-menu-line last" id="lineLast"></div>
-        </div>
-      </button>
-    </div>
-  </div>
-</div>
+
 
 <!-- ============================================
      FLOATING WHATSAPP
      ============================================ -->
 <a href="https://wa.me/971558889731" target="_blank" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp">
-  <i class="fab fa-whatsapp"></i>
+  <i class="fab fa-whatsapp"></i></a>    <div class="navnexora-navbar" id="navbar">
+    <div class="navnexora-container">
+
+        <!-- LEFT: Logo -->
+        <div class="navnexora-left-content">
+            <a href="index.html" aria-current="page" class="navnexora-brand-logo-wrapper">
+                <img src="logo.png" loading="lazy" alt="Nexora Solution Hub Logo" class="navnexora-brand-logo">
+            </a>
+        </div>
+
+        <!-- RIGHT: Navigation -->
+        <div class="navnexora-menu-wrapper">
+            <nav class="navnexora-menu" id="navMenu">
+
+                <!-- Home -->
+                <a href="index.html" class="navnexora-link active">Home</a>
+
+                <!-- About Us -->
+                <a href="aboutus.html" class="navnexora-link">About Us</a>
+
+                <!-- Services Dropdown -->
+                <div class="navnexora-dropdown">
+                    <button class="navnexora-dropdown-toggle" id="servicesDropdown" aria-haspopup="true" aria-expanded="false">
+                        Services
+                        <i class="fas fa-chevron-down navnexora-dropdown-icon"></i>
+                    </button>
+                    <div class="navnexora-dropdown-list" id="servicesDropdownList" role="menu">
+                        <a href="agricultureextensionservices.html" class="navnexora-dropdown-link" role="menuitem">
+                            <i class="fas fa-seedling"></i> Agriculture Extension Services
+                        </a>
+                        <a href="temporaryworkforcesupply.html" class="navnexora-dropdown-link" role="menuitem">
+                            <i class="fas fa-users"></i> Temporary Workforce Supply
+                        </a>
+                        <a href="commercialcleaningservices.html" class="navnexora-dropdown-link" role="menuitem">
+                            <i class="fas fa-broom"></i> Commercial Cleaning Services
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Industries -->
+                <a href="industries.html" class="navnexora-link">Industries</a>
+
+                <!-- FAQ -->
+                <a href="faq.html" class="navnexora-link">FAQ</a>
+
+                <!-- Contact -->
+                <a href="contact.html" class="navnexora-link">Contact</a>
+
+                <!-- Get a Quote Button - MOBILE ONLY -->
+                <a href="get-a-quote.html" class="navnexora-cta-button mobile-only">
+                    <i class="fas fa-paper-plane"></i> Get a Quote
+                </a>
+            </nav>
+
+            <!-- Desktop CTA Button -->
+            <a href="get-a-quote.html" class="navnexora-cta-button desktop-only">
+                <i class="fas fa-paper-plane"></i> Get a Quote
+            </a>
+
+            <!-- Hamburger Menu Button -->
+            <button class="navnexora-menu-button" id="hamburgerBtn" aria-label="Toggle navigation">
+                <div class="navnexora-menu-line-wrapper">
+                    <div class="navnexora-menu-line top" id="lineTop"></div>
+                    <div class="navnexora-menu-line middle" id="lineMiddle"></div>
+                    <div class="navnexora-menu-line last" id="lineLast"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>  
 </a>
 
 <!-- ============================================
-     GALLERY CONTENT
+     GALLERY CONTENT — SQUARE IMAGES (1:1 ASPECT RATIO)
+     Using work1.jpeg to work6.jpeg
      ============================================ -->
 <section class="max-w-7xl mx-auto px-4 py-12 md:py-16">
     <div class="text-center max-w-3xl mx-auto mb-12">
@@ -114,57 +2063,69 @@
         </p>
     </div>
 
-    <!-- Gallery Grid -->
+    <!-- Gallery Grid with Square Images -->
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Agriculture & Farm Operations -->
+        <!-- 1. Agriculture & Farm Operations → work1.jpeg -->
         <div class="gallery-img bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eef0f3]">
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Agriculture & Farm Operations" class="w-full h-64 object-cover">
+            <div class="aspect-square w-full overflow-hidden">
+                <img src="work1.jpeg" alt="Agriculture & Farm Operations" class="w-full h-full object-cover">
+            </div>
             <div class="p-5">
                 <h4 class="text-lg font-bold text-deep">Agriculture &amp; Farm Operations</h4>
                 <p class="text-gray-500 text-sm mt-1">Our dedicated teams ensure optimal agricultural productivity through expert farm management, greenhouse operations, and sustainable harvesting practices.</p>
             </div>
         </div>
 
-        <!-- Workforce in Action -->
+        <!-- 2. Workforce in Action → work2.jpeg -->
         <div class="gallery-img bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eef0f3]">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Workforce in Action" class="w-full h-64 object-cover">
+            <div class="aspect-square w-full overflow-hidden">
+                <img src="work2.jpeg" alt="Workforce in Action" class="w-full h-full object-cover">
+            </div>
             <div class="p-5">
                 <h4 class="text-lg font-bold text-deep">Workforce in Action</h4>
                 <p class="text-gray-500 text-sm mt-1">We provide skilled and efficient temporary workforce solutions, seamlessly integrating into various sectors from logistics and hospitality to educational and maintenance services.</p>
             </div>
         </div>
 
-        <!-- Commercial Cleaning -->
+        <!-- 3. Commercial Cleaning → work3.jpeg -->
         <div class="gallery-img bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eef0f3]">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Commercial Cleaning" class="w-full h-64 object-cover">
+            <div class="aspect-square w-full overflow-hidden">
+                <img src="work3.jpeg" alt="Commercial Cleaning" class="w-full h-full object-cover">
+            </div>
             <div class="p-5">
                 <h4 class="text-lg font-bold text-deep">Commercial Cleaning</h4>
                 <p class="text-gray-500 text-sm mt-1">Delivering impeccable standards of hygiene and presentation, our commercial cleaning teams ensure spotless environments across offices, facilities, and specialized deep cleaning operations.</p>
             </div>
         </div>
 
-        <!-- Company & Training -->
+        <!-- 4. Company & Training → work4.jpeg -->
         <div class="gallery-img bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eef0f3]">
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Company & Training" class="w-full h-64 object-cover">
+            <div class="aspect-square w-full overflow-hidden">
+                <img src="work4.jpeg" alt="Company & Training" class="w-full h-full object-cover">
+            </div>
             <div class="p-5">
                 <h4 class="text-lg font-bold text-deep">Company &amp; Training</h4>
                 <p class="text-gray-500 text-sm mt-1">We invest in our people through continuous training, fostering a culture of safety, collaboration, and professional growth to support our clients effectively.</p>
             </div>
         </div>
 
-        <!-- Greenhouse Operations -->
+        <!-- 5. Greenhouse Operations → work5.jpeg -->
         <div class="gallery-img bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eef0f3]">
-            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Greenhouse Operations" class="w-full h-64 object-cover">
+            <div class="aspect-square w-full overflow-hidden">
+                <img src="work5.jpeg" alt="Greenhouse Operations" class="w-full h-full object-cover">
+            </div>
             <div class="p-5">
                 <h4 class="text-lg font-bold text-deep">Greenhouse Operations</h4>
                 <p class="text-gray-500 text-sm mt-1">Specialized greenhouse crop care, tray movement, plant spacing, pruning, harvesting, and sanitation services for controlled-environment agriculture.</p>
             </div>
         </div>
 
-        <!-- Harvest & Post-Harvest -->
+        <!-- 6. Harvest & Post-Harvest → work6.jpeg -->
         <div class="gallery-img bg-white rounded-2xl overflow-hidden shadow-sm border border-[#eef0f3]">
-            <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Harvest & Post-Harvest" class="w-full h-64 object-cover">
+            <div class="aspect-square w-full overflow-hidden">
+                <img src="work6.jpeg" alt="Harvest & Post-Harvest" class="w-full h-full object-cover">
+            </div>
             <div class="p-5">
                 <h4 class="text-lg font-bold text-deep">Harvest &amp; Post-Harvest</h4>
                 <p class="text-gray-500 text-sm mt-1">Harvesting, sorting, grading, packing, labelling, palletising, and dispatch preparation teams ready for seasonal deployment.</p>
@@ -184,118 +2145,615 @@
 <!-- ============================================
      FOOTER
      ============================================ -->
-<footer class="bg-deep pt-12 pb-4 border-t-0">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="bg-white/5 rounded-2xl flex flex-wrap justify-between items-center p-6 border border-white/10">
-      <form class="flex flex-wrap items-center gap-3 flex-1 min-w-[240px]">
-        <input type="email" placeholder="Enter your email" class="flex-1 min-w-[180px] px-4 py-3 rounded-full bg-white/10 border border-white/15 text-white placeholder:text-white/50 focus:border-accent outline-none transition">
-        <button type="submit" class="btn-primary text-white font-semibold px-6 py-3 rounded-full text-sm">Get latest news</button>
-      </form>
-      <div class="flex items-center gap-4 flex-wrap mt-3 md:mt-0">
-        <span class="text-white/60 text-sm font-medium">Follow Us -</span>
-        <div class="flex gap-2">
-          <a href="#" class="bg-accent rounded-full w-10 h-10 flex items-center justify-center hover:scale-110 transition"><img src="https://cdn.prod.website-files.com/6787c8325299a2370e04026f/6787c8325299a2370e0411fe_Instagram.svg" alt="IG" class="w-5 invert brightness-0"></a>
-          <a href="#" class="bg-accent rounded-full w-10 h-10 flex items-center justify-center hover:scale-110 transition"><img src="https://cdn.prod.website-files.com/6787c8325299a2370e04026f/6787c8325299a2370e0411fb_Twitter.svg" alt="X" class="w-5 invert brightness-0"></a>
-          <a href="#" class="bg-accent rounded-full w-10 h-10 flex items-center justify-center hover:scale-110 transition"><img src="https://cdn.prod.website-files.com/6787c8325299a2370e04026f/6787c8325299a2370e041202_Facebook.svg" alt="FB" class="w-5 invert brightness-0"></a>
-        </div>
-      </div>
-    </div>
+           <!-- ============================================
+                FOOTER - BLUE (#1A2E4A)
+                ============================================ -->
+                <div class="section-footer" style="background-color: #1A2E4A; padding-top: 4rem; padding-bottom: 1.5rem; border-top: none;">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="footer-component">
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-10 border-b border-white/10">
-      <div>
-        <a href="index.html"><img src="logo.png" alt="Nexora" class="h-24 w-auto mb-4"></a>
-        <p class="text-white/60 text-sm max-w-xs leading-relaxed">Your trusted partner for workforce solutions, agriculture services, and commercial cleaning across the UAE.</p>
-      </div>
-      <div>
-        <h5 class="text-white font-semibold uppercase tracking-wider text-sm mb-4">Quick Links</h5>
-        <ul class="space-y-2 text-sm">
-          <li><a href="index.html" class="footer-link">Home</a></li>
-          <li><a href="aboutus.html" class="footer-link">About Us</a></li>
-          <li><a href="services.html" class="footer-link">Services</a></li>
-          <li><a href="industries.html" class="footer-link">Sectors We Serve</a></li>
-          <li><a href="index.html#why-choose-us" class="footer-link">Why Us</a></li>
-          <li><a href="careers.html" class="footer-link">Careers</a></li>
-          <li><a href="gallery.html" class="footer-link text-white/90">Gallery</a></li>
-          <li><a href="index.htmlnews.html" class="footer-link">News &amp; Updates</a></li>
-          <li><a href="contact.html" class="footer-link">Contact Us</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-white font-semibold uppercase tracking-wider text-sm mb-4">Services</h5>
-        <ul class="space-y-2 text-sm">
-          <li><a href="agricultureextensionservices.html" class="footer-link">Agriculture Extension</a></li>
-          <li><a href="temporaryworkforcesupply.html" class="footer-link">Temporary Workforce</a></li>
-          <li><a href="commercialcleaningservices.html" class="footer-link">Commercial Cleaning</a></li>
-          <li><a href="#" class="footer-link">Permanent Hiring</a></li>
-        </ul>
-        <h5 class="text-white font-semibold uppercase tracking-wider text-sm mt-6 mb-3">Sectors</h5>
-        <ul class="space-y-2 text-sm">
-          <li><a href="#" class="footer-link">Farms &amp; Nurseries</a></li>
-          <li><a href="#" class="footer-link">Warehouses &amp; Logistics</a></li>
-          <li><a href="#" class="footer-link">Hotels &amp; Hospitality</a></li>
-          <li><a href="#" class="footer-link">Schools &amp; Education</a></li>
-          <li><a href="#" class="footer-link">Hospitals &amp; Clinics</a></li>
-          <li><a href="#" class="footer-link">Offices &amp; Commercial</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5 class="text-white font-semibold uppercase tracking-wider text-sm mb-4">Contact &amp; Social</h5>
-        <div class="space-y-3">
-          <div class="flex items-center gap-3"><div class="footer-icon-box"><i class="fas fa-map-marker-alt"></i></div><div><div class="text-white/40 text-[10px] uppercase tracking-wider">Office</div><div class="text-white/90 font-medium text-sm">Dubai, UAE</div></div></div>
-          <div class="flex items-center gap-3"><div class="footer-icon-box"><i class="fas fa-envelope"></i></div><div><div class="text-white/40 text-[10px] uppercase tracking-wider">Email</div><div class="text-white/90 font-medium text-sm">info@nexorauae.com</div></div></div>
-          <div class="flex items-center gap-3"><div class="footer-icon-box"><i class="fas fa-phone"></i></div><div><div class="text-white/40 text-[10px] uppercase tracking-wider">Phone</div><div class="text-white/90 font-medium text-sm">+971 55 888 9731</div></div></div>
-          <div class="flex items-center gap-3"><div class="footer-icon-box bg-[#25D366]"><i class="fab fa-whatsapp"></i></div><div><div class="text-white/40 text-[10px] uppercase tracking-wider">WhatsApp</div><div class="text-white/90 font-medium text-sm">+971 55 888 9731</div></div></div>
-          <div class="pt-2 flex flex-col gap-2">
-            <a href="brochure.pdf" target="_blank" class="btn-primary text-white font-semibold px-4 py-2 rounded-full text-sm text-center"><i class="fas fa-download mr-2"></i>Download Brochure</a>
-            <a href="#" class="text-accent font-medium text-sm underline hover:text-[#7a6ae6]"><i class="fas fa-star mr-1"></i>Review Us on Google</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-wrap justify-between items-center pt-6 text-sm text-white/60">
-      <span>&copy; 2026 Nexora Solution Hub. All Rights Reserved.</span>
-      <div class="flex gap-4 mt-2 md:mt-0">
-        <a href="privacy.html" class="text-white/60 hover:text-accent">Privacy Policy</a>
-        <a href="terms.html" class="text-white/60 hover:text-accent">Terms &amp; Conditions</a>
-        <span class="text-white/20">|</span>
-        <span class="text-white/60">Designed by <a href="https://www.lestora.com/" target="_blank" class="text-accent font-semibold hover:text-[#7a6ae6]">Lestora</a></span>
-      </div>
-    </div>
-  </div>
-</footer>
+                              
+                                <!-- MIDDLE: Footer Grid -->
+                                <div class="w-layout-grid footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1.5fr 1.5fr; gap: 2.5rem; padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
 
+                                    <!-- COLUMN 1: Brand -->
+                                    <div class="footer-left-content-wrapper" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                        <div class="footer-left-top-conten-wrapper" style="display: flex; flex-direction: column; gap: 1rem;">
+                                            <a href="index.html" aria-current="page" class="footer-brand-logo-wrapper w-inline-block w--current">
+                                                <img src="logo.png" loading="lazy" alt="Nav Logo" style="height: 100px; width: auto; ">
+                                            </a>
+                                            <p class="text-size-regular" style="color: rgba(255,255,255,0.7); max-width: 280px; line-height: 1.7;">Your trusted partner for workforce solutions, agriculture services, and commercial cleaning across the UAE.</p>
+                                        </div>
+                                    </div>
+
+                                 <!-- COLUMN 2: Quick Links -->
+<div class="footer-link-wrapper" style="display: flex; flex-direction: column; gap: 1rem;">
+    <div class="text-size-small is-black-700" style="color: #ffffff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Quick Links</div>
+    <div class="footer-link-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="index.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Home</a>
+        <a href="aboutus.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">About Us</a>
+        <a href="services.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Services</a>
+        <a href="industries.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Sectors We Serve</a>
+        <a href="#why-choose-us" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Why Us</a>
+        <a href="careers.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Careers</a>
+        <a href="gallery.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Gallery</a>
+        
+        <a href="contact.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Contact Us</a>
+    </div>
+</div>
+
+                                   <!-- COLUMN 3: Services & Sectors -->
+<div class="footer-link-wrapper" style="display: flex; flex-direction: column; gap: 1rem;">
+    <div class="text-size-small is-black-700" style="color: #ffffff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Services</div>
+    <div class="footer-link-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <a href="agricultureextensionservices.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Agriculture Extension Services</a>
+        <a href="temporaryworkforcesupply.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Temporary Workforce Supply</a>
+        <a href="commercialcleaningservices.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Commercial Cleaning Services</a>
+        <a href="permanenthiring.html" class="footer-link" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; font-weight: 400;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='rgba(255,255,255,0.7)';">Permanent Hiring Solutions</a>
+
+        <div class="text-size-small is-black-700" style="color: #ffffff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.5rem;"></div>
+
+    </div>
+</div>
+
+                                    <!-- COLUMN 4: Contact & Social -->
+                                    <div class="footer-link-wrapper" style="display: flex; flex-direction: column; gap: 1rem;">
+                                        <div class="text-size-small is-black-700" style="color: #ffffff; font-size: 1.1rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Contact &amp; Social</div>
+
+                                        <!-- Office -->
+                                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                            <div style="background: #5E4CE6; border-radius: 100%; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <i class="fas fa-map-marker-alt" style="color: #ffffff; font-size: 0.75rem;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="color: rgba(255,255,255,0.5); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Office</div>
+                                                <div style="color: rgba(255,255,255,0.9); font-weight: 500; font-size: 0.9rem;">Dubai, UAE</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Email -->
+                                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                            <div style="background: #5E4CE6; border-radius: 100%; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <i class="fas fa-envelope" style="color: #ffffff; font-size: 0.75rem;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="color: rgba(255,255,255,0.5); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Email</div>
+                                                <div style="color: rgba(255,255,255,0.9); font-weight: 500; font-size: 0.9rem;">info@nexorasolutionhub.com</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Phone -->
+                                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                            <div style="background: #5E4CE6; border-radius: 100%; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <i class="fas fa-phone" style="color: #ffffff; font-size: 0.75rem;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="color: rgba(255,255,255,0.5); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Phone</div>
+                                                <div style="color: rgba(255,255,255,0.9); font-weight: 500; font-size: 0.9rem;">+971 56 486 8757</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- WhatsApp -->
+                                        <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                            <div style="background: #25D366; border-radius: 100%; width: 2rem; height: 2rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                                <i class="fab fa-whatsapp" style="color: #ffffff; font-size: 0.75rem;"></i>
+                                            </div>
+                                            <div>
+                                                <div style="color: rgba(255,255,255,0.5); font-size: 0.65rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">WhatsApp</div>
+                                                <div style="color: rgba(255,255,255,0.9); font-weight: 500; font-size: 0.9rem;">+971 56 486 8757</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Download Brochure & Review -->
+                                        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
+                                            <a href="brochure.pdf" target="_blank" class="button" style="background: #5E4CE6; color: #ffffff; padding: 0.6rem 1.2rem; border-radius: 50px; text-decoration: none; text-align: center; font-weight: 600; transition: all 0.3s ease;" onmouseenter="this.style.background='#4a3ac9'; this.style.transform='translateY(-2px)';" onmouseleave="this.style.background='#5E4CE6'; this.style.transform='translateY(0)';">
+                                                <i class="fas fa-download" style="margin-right: 0.5rem;"></i> Download Brochure
+                                            </a>
+                                                              </div>
+                                    </div>
+                                </div>
+
+                               <!-- BOTTOM: Copyright -->
+<div class="footer-bottom-content" style="display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.08); margin-top: 1rem; flex-wrap: wrap; gap: 1rem;">
+    <div style="color: #1A2E4A; font-size: 0.9rem; margin-left: 0.5rem; font-weight: 500;">
+        &copy; 2026 Nexora Solution Hub. All Rights Reserved.
+    </div>
+    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; margin-right: 0.5rem;">
+        <a href="privacy.html" style="color: #1A2E4A; text-decoration: none; transition: color 0.3s ease; font-weight: 500;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='#1A2E4A';">Privacy Policy</a>
+        <a href="terms.html" style="color: #1A2E4A; text-decoration: none; transition: color 0.3s ease; font-weight: 500;" onmouseenter="this.style.color='#5E4CE6';" onmouseleave="this.style.color='#1A2E4A';">Terms &amp; Conditions</a>
+        <span style="color: rgba(255,255,255,0.2);">|</span>
+        <span style="color: #1A2E4A; font-size: 0.85rem; font-weight: 500;">Designed by <a href="https://www.lestora.com/" target="_blank" style="color: #5E4CE6; text-decoration: none; font-weight: 600; transition: color 0.3s ease;" onmouseenter="this.style.color='#7a6ae6';" onmouseleave="this.style.color='#5E4CE6';">Lestora</a></span>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- ============================================
+JAVASCRIPT - CLEAN VERSION
+============================================ -->
+
+
+
+<!-- ============================================
+JAVASCRIPT - CLEAN VERSION (FIXED)
+============================================ -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+
+    // ==========================================
+    // 1. STICKY NAVBAR - SHRINK ON SCROLL
+    // ==========================================
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', function() { navbar.classList.toggle('scrolled', window.scrollY > 50); });
-    const hamburger = document.getElementById('hamburgerBtn');
-    const navMenu = document.getElementById('navMenu');
-    const lines = { top: document.getElementById('lineTop'), middle: document.getElementById('lineMiddle'), last: document.getElementById('lineLast') };
-    let menuOpen = false;
-    hamburger.addEventListener('click', function(e) {
-      e.stopPropagation();
-      menuOpen = !menuOpen;
-      navMenu.classList.toggle('active');
-      lines.top.classList.toggle('open'); lines.middle.classList.toggle('open'); lines.last.classList.toggle('open');
-      document.body.style.overflow = menuOpen ? 'hidden' : '';
-    });
-    document.addEventListener('click', function(e) {
-      if (menuOpen && window.innerWidth <= 991 && !e.target.closest('.navnexora-navbar')) {
-        navMenu.classList.remove('active');
-        lines.top.classList.remove('open'); lines.middle.classList.remove('open'); lines.last.classList.remove('open');
-        menuOpen = false; document.body.style.overflow = '';
-      }
-    });
-    const ddToggle = document.getElementById('servicesDropdown');
-    const ddList = document.getElementById('servicesDropdownList');
-    if (ddToggle && ddList) {
-      ddToggle.addEventListener('click', function(e) { if (window.innerWidth <= 991) { e.preventDefault(); ddList.classList.toggle('opacity-100'); ddList.classList.toggle('invisible'); } });
-      ddToggle.addEventListener('mouseenter', function() { if (window.innerWidth > 991) { ddList.classList.add('opacity-100', 'visible'); ddList.classList.remove('opacity-0', 'invisible'); } });
-      ddToggle.addEventListener('mouseleave', function() { if (window.innerWidth > 991) { setTimeout(() => { if (!ddList.matches(':hover')) { ddList.classList.remove('opacity-100', 'visible'); ddList.classList.add('opacity-0', 'invisible'); } }, 150); } });
-      ddList.addEventListener('mouseenter', function() { if (window.innerWidth > 991) { ddList.classList.add('opacity-100', 'visible'); ddList.classList.remove('opacity-0', 'invisible'); } });
-      ddList.addEventListener('mouseleave', function() { if (window.innerWidth > 991) { ddList.classList.remove('opacity-100', 'visible'); ddList.classList.add('opacity-0', 'invisible'); } });
+    
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
     }
-  });
-</script>
-</body>
+
+    // ==========================================
+    // 2. SERVICES DROPDOWN TOGGLE (Desktop + Mobile)
+    // ==========================================
+    const dropdownToggle = document.getElementById('servicesDropdown');
+    const dropdownList = document.getElementById('servicesDropdownList');
+    
+    if (dropdownToggle && dropdownList) {
+        let hoverTimeout;
+        
+        // Desktop: hover behavior
+        dropdownToggle.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 991) {
+                clearTimeout(hoverTimeout);
+                dropdownList.classList.add('active');
+                const icon = this.querySelector('.navnexora-dropdown-icon');
+                if (icon) icon.classList.add('open');
+            }
+        });
+        
+        dropdownToggle.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 991) {
+                hoverTimeout = setTimeout(() => {
+                    dropdownList.classList.remove('active');
+                    const icon = this.querySelector('.navnexora-dropdown-icon');
+                    if (icon) icon.classList.remove('open');
+                }, 200);
+            }
+        });
+        
+        dropdownList.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 991) {
+                clearTimeout(hoverTimeout);
+                this.classList.add('active');
+            }
+        });
+        
+        dropdownList.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 991) {
+                this.classList.remove('active');
+                const icon = dropdownToggle.querySelector('.navnexora-dropdown-icon');
+                if (icon) icon.classList.remove('open');
+            }
+        });
+        
+        // Mobile: click toggle (FIXED - uses 'active' class)
+        dropdownToggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 991) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isOpen = dropdownList.classList.toggle('active');
+                const icon = this.querySelector('.navnexora-dropdown-icon');
+                if (icon) icon.classList.toggle('open');
+                this.setAttribute('aria-expanded', isOpen);
+            }
+        });
+    }
+
+    // ==========================================
+    // 3. HAMBURGER MENU TOGGLE
+    // ==========================================
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+    const lineTop = document.getElementById('lineTop');
+    const lineMiddle = document.getElementById('lineMiddle');
+    const lineLast = document.getElementById('lineLast');
+    
+    if (hamburgerBtn && navMenu) {
+        let isMenuOpen = false;
+        
+        // Toggle menu on hamburger click
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            navMenu.classList.toggle('active');
+            if (lineTop) lineTop.classList.toggle('open');
+            if (lineMiddle) lineMiddle.classList.toggle('open');
+            if (lineLast) lineLast.classList.toggle('open');
+            this.setAttribute('aria-expanded', isMenuOpen);
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        });
+        
+        // Close menu when a link is clicked (mobile)
+        navMenu.querySelectorAll('.navnexora-link, .navnexora-dropdown-link, .navnexora-cta-button.mobile-only').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 991) {
+                    closeMenu();
+                }
+            });
+        });
+        
+        // Close menu function
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            if (lineTop) lineTop.classList.remove('open');
+            if (lineMiddle) lineMiddle.classList.remove('open');
+            if (lineLast) lineLast.classList.remove('open');
+            isMenuOpen = false;
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            
+            // Also close any open dropdowns
+            if (dropdownList) {
+                dropdownList.classList.remove('active');
+                if (dropdownToggle) {
+                    const icon = dropdownToggle.querySelector('.navnexora-dropdown-icon');
+                    if (icon) icon.classList.remove('open');
+                }
+            }
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 991 && isMenuOpen) {
+                const navbarElement = document.querySelector('.navnexora-navbar');
+                if (navbarElement && !navbarElement.contains(e.target)) {
+                    closeMenu();
+                }
+            }
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        });
+    }
+
+    // ==========================================
+    // 4. CLOSE DROPDOWN ON OUTSIDE CLICK (Mobile)
+    // ==========================================
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 991) {
+            const dropdown = document.querySelector('.navnexora-dropdown');
+            if (dropdown && !dropdown.contains(e.target)) {
+                if (dropdownList) {
+                    dropdownList.classList.remove('active');
+                }
+                if (dropdownToggle) {
+                    const icon = dropdownToggle.querySelector('.navnexora-dropdown-icon');
+                    if (icon) icon.classList.remove('open');
+                }
+            }
+        }
+    });
+
+    // ==========================================
+    // 5. RESIZE HANDLER - Close menu on resize to desktop
+    // ==========================================
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 991) {
+            // Close mobile menu
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+            if (lineTop) {
+                lineTop.classList.remove('open');
+                lineMiddle.classList.remove('open');
+                lineLast.classList.remove('open');
+            }
+            document.body.style.overflow = '';
+            
+            // Close dropdown
+            if (dropdownList) {
+                dropdownList.classList.remove('active');
+            }
+            if (dropdownToggle) {
+                const icon = dropdownToggle.querySelector('.navnexora-dropdown-icon');
+                if (icon) icon.classList.remove('open');
+            }
+        }
+    });
+
+    // ==========================================
+    // 6. SCROLL RISE UP ANIMATION
+    // ==========================================
+    const riseElements = document.querySelectorAll('.scroll-rise-up');
+    if (riseElements.length > 0) {
+        const riseObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    riseObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        riseElements.forEach(function(el) {
+            riseObserver.observe(el);
+        });
+    }
+
+    // ==========================================
+    // 7. SCROLL ANIMATIONS - BENEFIT CARDS
+    // ==========================================
+    const animateElements = document.querySelectorAll('.scroll-animate');
+    if (animateElements.length > 0) {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const delay = parseInt(el.getAttribute('data-delay')) || 0;
+                    setTimeout(function() {
+                        el.style.transition = 'opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateX(0) translateY(0)';
+                    }, delay);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        animateElements.forEach(function(el) {
+            observer.observe(el);
+        });
+    }
+
+    console.log('Navigation and animations initialized ✅');
+
+});
+</script><!-- ============================================
+JAVASCRIPT - CLEAN VERSION (FIXED)
+============================================ -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // ==========================================
+    // 1. STICKY NAVBAR - SHRINK ON SCROLL
+    // ==========================================
+    const navbar = document.getElementById('navbar');
+    
+    if (navbar) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // ==========================================
+    // 2. SERVICES DROPDOWN TOGGLE (Desktop + Mobile)
+    // ==========================================
+    const dropdownToggle = document.getElementById('servicesDropdown');
+    const dropdownList = document.getElementById('servicesDropdownList');
+    
+    if (dropdownToggle && dropdownList) {
+        let hoverTimeout;
+        
+        // Desktop: hover behavior
+        dropdownToggle.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 991) {
+                clearTimeout(hoverTimeout);
+                dropdownList.classList.add('active');
+                const icon = this.querySelector('.navnexora-dropdown-icon');
+                if (icon) icon.classList.add('open');
+            }
+        });
+        
+        dropdownToggle.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 991) {
+                hoverTimeout = setTimeout(() => {
+                    dropdownList.classList.remove('active');
+                    const icon = this.querySelector('.navnexora-dropdown-icon');
+                    if (icon) icon.classList.remove('open');
+                }, 200);
+            }
+        });
+        
+        dropdownList.addEventListener('mouseenter', function() {
+            if (window.innerWidth > 991) {
+                clearTimeout(hoverTimeout);
+                this.classList.add('active');
+            }
+        });
+        
+        dropdownList.addEventListener('mouseleave', function() {
+            if (window.innerWidth > 991) {
+                this.classList.remove('active');
+                const icon = dropdownToggle.querySelector('.navnexora-dropdown-icon');
+                if (icon) icon.classList.remove('open');
+            }
+        });
+        
+        // Mobile: click toggle (FIXED - uses 'active' class)
+        dropdownToggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 991) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isOpen = dropdownList.classList.toggle('active');
+                const icon = this.querySelector('.navnexora-dropdown-icon');
+                if (icon) icon.classList.toggle('open');
+                this.setAttribute('aria-expanded', isOpen);
+            }
+        });
+    }
+
+    // ==========================================
+    // 3. HAMBURGER MENU TOGGLE
+    // ==========================================
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+    const lineTop = document.getElementById('lineTop');
+    const lineMiddle = document.getElementById('lineMiddle');
+    const lineLast = document.getElementById('lineLast');
+    
+    if (hamburgerBtn && navMenu) {
+        let isMenuOpen = false;
+        
+        // Toggle menu on hamburger click
+        hamburgerBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            navMenu.classList.toggle('active');
+            if (lineTop) lineTop.classList.toggle('open');
+            if (lineMiddle) lineMiddle.classList.toggle('open');
+            if (lineLast) lineLast.classList.toggle('open');
+            this.setAttribute('aria-expanded', isMenuOpen);
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+        });
+        
+        // Close menu when a link is clicked (mobile)
+        navMenu.querySelectorAll('.navnexora-link, .navnexora-dropdown-link, .navnexora-cta-button.mobile-only').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 991) {
+                    closeMenu();
+                }
+            });
+        });
+        
+        // Close menu function
+        function closeMenu() {
+            navMenu.classList.remove('active');
+            if (lineTop) lineTop.classList.remove('open');
+            if (lineMiddle) lineMiddle.classList.remove('open');
+            if (lineLast) lineLast.classList.remove('open');
+            isMenuOpen = false;
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            
+            // Also close any open dropdowns
+            if (dropdownList) {
+                dropdownList.classList.remove('active');
+                if (dropdownToggle) {
+                    const icon = dropdownToggle.querySelector('.navnexora-dropdown-icon');
+                    if (icon) icon.classList.remove('open');
+                }
+            }
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 991 && isMenuOpen) {
+                const navbarElement = document.querySelector('.navnexora-navbar');
+                if (navbarElement && !navbarElement.contains(e.target)) {
+                    closeMenu();
+                }
+            }
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isMenuOpen) {
+                closeMenu();
+            }
+        });
+    }
+
+    // ==========================================
+    // 4. CLOSE DROPDOWN ON OUTSIDE CLICK (Mobile)
+    // ==========================================
+    document.addEventListener('click', function(e) {
+        if (window.innerWidth <= 991) {
+            const dropdown = document.querySelector('.navnexora-dropdown');
+            if (dropdown && !dropdown.contains(e.target)) {
+                if (dropdownList) {
+                    dropdownList.classList.remove('active');
+                }
+                if (dropdownToggle) {
+                    const icon = dropdownToggle.querySelector('.navnexora-dropdown-icon');
+                    if (icon) icon.classList.remove('open');
+                }
+            }
+        }
+    });
+
+    // ==========================================
+    // 5. RESIZE HANDLER - Close menu on resize to desktop
+    // ==========================================
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 991) {
+            // Close mobile menu
+            if (navMenu) {
+                navMenu.classList.remove('active');
+            }
+            if (lineTop) {
+                lineTop.classList.remove('open');
+                lineMiddle.classList.remove('open');
+                lineLast.classList.remove('open');
+            }
+            document.body.style.overflow = '';
+            
+            // Close dropdown
+            if (dropdownList) {
+                dropdownList.classList.remove('active');
+            }
+            if (dropdownToggle) {
+                const icon = dropdownToggle.querySelector('.navnexora-dropdown-icon');
+                if (icon) icon.classList.remove('open');
+            }
+        }
+    });
+
+    // ==========================================
+    // 6. SCROLL RISE UP ANIMATION
+    // ==========================================
+    const riseElements = document.querySelectorAll('.scroll-rise-up');
+    if (riseElements.length > 0) {
+        const riseObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    riseObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        riseElements.forEach(function(el) {
+            riseObserver.observe(el);
+        });
+    }
+
+    // ==========================================
+    // 7. SCROLL ANIMATIONS - BENEFIT CARDS
+    // ==========================================
+    const animateElements = document.querySelectorAll('.scroll-animate');
+    if (animateElements.length > 0) {
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const delay = parseInt(el.getAttribute('data-delay')) || 0;
+                    setTimeout(function() {
+                        el.style.transition = 'opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateX(0) translateY(0)';
+                    }, delay);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+        animateElements.forEach(function(el) {
+            observer.observe(el);
+        });
+    }
+
+    console.log('Navigation and animations initialized ✅');
+
+});
+</script></body>
 </html>
