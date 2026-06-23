@@ -20,7 +20,173 @@
 <!-- ========== CSS ========== -->
  
 
-<style>
+<style>/* ============================================
+   INDUSTRIES HEADER - PROFESSIONAL ALIGNMENT
+   ============================================ */
+
+/* --- Section Container --- */
+.section-industries-nobox {
+    padding: 5rem 0 4rem;
+    background: #fafafc;
+    position: relative;
+}
+
+/* --- Header Wrapper - Perfect Centering --- */
+.industries-header-nobox {
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto 3.5rem;
+    padding: 0 2rem;
+}
+
+/* --- Badge - Centered --- */
+.industries-header-nobox .badge-wrap {
+    margin: 0 auto 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(94, 76, 230, 0.08);
+    padding: 0.4rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid rgba(94, 76, 230, 0.12);
+}
+
+.industries-header-nobox .badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #5E4CE6;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.industries-header-nobox .badge-text {
+    color: #5E4CE6;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+/* --- Heading - Perfect Centering --- */
+.industries-header-nobox .heading-style-h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #1A2E4A;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem 0;
+    text-align: center;
+}
+
+.industries-header-nobox .heading-style-h2 span {
+    background: linear-gradient(135deg, #5E4CE6, #8b7cf0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- Paragraph - Perfect Centering --- */
+.industries-header-nobox .text-size-regular {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4a4a5a;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* --- Scroll Reveal --- */
+.industries-header-nobox.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.industries-header-nobox.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   RESPONSIVE - TABLET
+   ============================================ */
+@media (max-width: 991px) {
+    .industries-header-nobox {
+        max-width: 700px;
+        padding: 0 1.5rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .industries-header-nobox .heading-style-h2 {
+        font-size: 2.2rem;
+    }
+    
+    .industries-header-nobox .text-size-regular {
+        font-size: 1rem;
+        max-width: 600px;
+    }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 768px) {
+    .section-industries-nobox {
+        padding: 3rem 0 2.5rem;
+    }
+    
+    .industries-header-nobox {
+        max-width: 100%;
+        padding: 0 1.25rem;
+        margin-bottom: 2rem;
+    }
+    
+    .industries-header-nobox .heading-style-h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .industries-header-nobox .text-size-regular {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .industries-header-nobox .badge-wrap {
+        padding: 0.3rem 1rem;
+    }
+    
+    .industries-header-nobox .badge-text {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-industries-nobox {
+        padding: 2rem 0 2rem;
+    }
+    
+    .industries-header-nobox {
+        padding: 0 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .industries-header-nobox .heading-style-h2 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 0.75rem;
+    }
+    
+    .industries-header-nobox .text-size-regular {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+}
   /* ============================================
    INDUSTRIES - NO BOX SLIDER
    ============================================ */
