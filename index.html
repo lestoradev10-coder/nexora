@@ -4527,7 +4527,7 @@ NAVBAR - NEXORA CUSTOM
         <!-- ============================================
         FLOATING WHATSAPP BUTTON
         ============================================ -->
-        <a href="https://wa.me/971558889731" target="_blank" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp">
+        <a href="https://wa.me/971564868757" target="_blank" class="floating-whatsapp-btn" aria-label="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i></a>   
          </a>
 
@@ -6115,35 +6115,25 @@ DARK GREY input backgrounds, calendar date pickers
         <!-- Service Start Date - calendar picker -->
         <div class="form-group" style="display: flex; flex-direction: column; gap: 0.3rem;">
             <label style="font-size: 0.7rem; font-weight: 600; color: #1A2E4A; letter-spacing: 0.3px; text-transform: uppercase;">Service Start Date <span style="color: #5E4CE6;">*</span></label>
-            <input type="date" class="form-input" style="padding: 0.7rem 1rem; border: 1.5px solid #d0d0d0; border-radius: 8px; font-size: 0.9rem; transition: all 0.3s ease; outline: none; font-family: inherit; background: #d5d5d5 !important; width: 100%; color-scheme: light; cursor: pointer;" onfocus="this.style.borderColor='#5E4CE6'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(94,76,230,0.08)';" onblur="if(this.value) { this.style.background='#c8c8c8 !important'; this.style.borderColor='#5E4CE6'; } else { this.style.borderColor='#d0d0d0'; this.style.background='#d5d5d5 !important'; this.style.boxShadow='none'; }">
+            <input type="date" id="startDate" class="form-input" style="padding: 0.7rem 1rem; border: 1.5px solid #d0d0d0; border-radius: 8px; font-size: 0.9rem; transition: all 0.3s ease; outline: none; font-family: inherit; background: #d5d5d5 !important; width: 100%; color-scheme: light; cursor: pointer;" onfocus="this.style.borderColor='#5E4CE6'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(94,76,230,0.08)';" onblur="if(this.value) { this.style.background='#c8c8c8 !important'; this.style.borderColor='#5E4CE6'; } else { this.style.borderColor='#d0d0d0'; this.style.background='#d5d5d5 !important'; this.style.boxShadow='none'; }">
         </div>
 
         <!-- Service End Date - calendar picker -->
         <div class="form-group" style="display: flex; flex-direction: column; gap: 0.3rem;">
             <label style="font-size: 0.7rem; font-weight: 600; color: #1A2E4A; letter-spacing: 0.3px; text-transform: uppercase;">Service End Date <span style="color: #5E4CE6;">*</span></label>
-            <input type="date" class="form-input" style="padding: 0.7rem 1rem; border: 1.5px solid #d0d0d0; border-radius: 8px; font-size: 0.9rem; transition: all 0.3s ease; outline: none; font-family: inherit; background: #d5d5d5 !important; width: 100%; color-scheme: light; cursor: pointer;" onfocus="this.style.borderColor='#5E4CE6'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(94,76,230,0.08)';" onblur="if(this.value) { this.style.background='#c8c8c8 !important'; this.style.borderColor='#5E4CE6'; } else { this.style.borderColor='#d0d0d0'; this.style.background='#d5d5d5 !important'; this.style.boxShadow='none'; }">
+            <input type="date" id="endDate" class="form-input" style="padding: 0.7rem 1rem; border: 1.5px solid #d0d0d0; border-radius: 8px; font-size: 0.9rem; transition: all 0.3s ease; outline: none; font-family: inherit; background: #d5d5d5 !important; width: 100%; color-scheme: light; cursor: pointer;" onfocus="this.style.borderColor='#5E4CE6'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(94,76,230,0.08)';" onblur="if(this.value) { this.style.background='#c8c8c8 !important'; this.style.borderColor='#5E4CE6'; } else { this.style.borderColor='#d0d0d0'; this.style.background='#d5d5d5 !important'; this.style.boxShadow='none'; }">
+        </div>
+
+        <!-- Contract Duration - AUTO CALCULATED (READ ONLY) -->
+        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.3rem;">
+            <label style="font-size: 0.7rem; font-weight: 600; color: #1A2E4A; letter-spacing: 0.3px; text-transform: uppercase;">Contract Duration <span style="color: #5E4CE6;">*</span></label>
+            <input type="text" id="contractDuration" readonly class="form-input" placeholder="Select start and end dates" style="padding: 0.7rem 1rem; border: 1.5px solid #d0d0d0; border-radius: 8px; font-size: 0.9rem; transition: all 0.3s ease; outline: none; font-family: inherit; background: #e8e8e8 !important; width: 100%; cursor: default; color: #1A2E4A; font-weight: 500;" onfocus="this.style.borderColor='#5E4CE6'; this.style.boxShadow='0 0 0 4px rgba(94,76,230,0.08)';" onblur="this.style.borderColor='#d0d0d0'; this.style.boxShadow='none';">
         </div>
 
         <!-- Location -->
         <div class="form-group" style="display: flex; flex-direction: column; gap: 0.3rem;">
             <label style="font-size: 0.7rem; font-weight: 600; color: #1A2E4A; letter-spacing: 0.3px; text-transform: uppercase;">Location / Site Address <span style="color: #5E4CE6;">*</span></label>
             <input type="text" placeholder="e.g. Al Quoz, Dubai" class="form-input" style="padding: 0.7rem 1rem; border: 1.5px solid #d0d0d0; border-radius: 8px; font-size: 0.9rem; transition: all 0.3s ease; outline: none; font-family: inherit; background: #d5d5d5 !important; width: 100%;" onfocus="this.style.borderColor='#5E4CE6'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(94,76,230,0.08)';" onblur="if(this.value) { this.style.background='#c8c8c8 !important'; this.style.borderColor='#5E4CE6'; } else { this.style.borderColor='#d0d0d0'; this.style.background='#d5d5d5 !important'; this.style.boxShadow='none'; }">
-        </div>
-
-        <!-- Contract Duration -->
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 0.3rem;">
-            <label style="font-size: 0.7rem; font-weight: 600; color: #1A2E4A; letter-spacing: 0.3px; text-transform: uppercase;">Contract Duration</label>
-            <select class="form-select" style="padding: 0.7rem 1rem; border: 1.5px solid #d0d0d0; border-radius: 8px; font-size: 0.9rem; transition: all 0.3s ease; outline: none; font-family: inherit; background: #d5d5d5 !important; cursor: pointer; width: 100%; appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"12\" height=\"8\" viewBox=\"0 0 12 8\"><path d=\"M1 1l5 5 5-5\" stroke=\"%23999\" stroke-width=\"1.5\" fill=\"none\" stroke-linecap=\"round\"/></svg>'); background-repeat: no-repeat; background-position: right 1rem center;" onfocus="this.style.borderColor='#5E4CE6'; this.style.background='#ffffff'; this.style.boxShadow='0 0 0 4px rgba(94,76,230,0.08)';" onblur="if(this.value) { this.style.background='#c8c8c8 !important'; this.style.borderColor='#5E4CE6'; } else { this.style.borderColor='#d0d0d0'; this.style.background='#d5d5d5 !important'; this.style.boxShadow='none'; }">
-                <option value="">Select Duration</option>
-                <option value="1-3 days">1-3 days</option>
-                <option value="1 week">1 week</option>
-                <option value="2 weeks">2 weeks</option>
-                <option value="1 month">1 month</option>
-                <option value="3 months">3 months</option>
-                <option value="6 months">6 months</option>
-                <option value="12 months">12 months</option>
-                <option value="Permanent">Permanent</option>
-            </select>
         </div>
 
         <!-- Message -->
@@ -6158,7 +6148,7 @@ DARK GREY input backgrounds, calendar date pickers
                 <span>Submit Your Requirement</span>
                 <i class="fas fa-paper-plane" style="font-size: 0.8rem; transition: transform 0.3s ease;" onmouseenter="this.style.transform='translateX(4px)';" onmouseleave="this.style.transform='translateX(0)';"></i>
             </button>
-            <a href="tel:+971558889731" class="btn-call" style="background: transparent; color: #5E4CE6; padding: 0.7rem 1.8rem; border: 2px solid #5E4CE6; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;" onmouseenter="this.style.background='#5E4CE6'; this.style.color='#ffffff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 30px rgba(94,76,230,0.2)';" onmouseleave="this.style.background='transparent'; this.style.color='#5E4CE6'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            <a href="tel:+971564868757" class="btn-call" style="background: transparent; color: #5E4CE6; padding: 0.7rem 1.8rem; border: 2px solid #5E4CE6; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;" onmouseenter="this.style.background='#5E4CE6'; this.style.color='#ffffff'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 30px rgba(94,76,230,0.2)';" onmouseleave="this.style.background='transparent'; this.style.color='#5E4CE6'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">
                 <i class="fas fa-phone" style="font-size: 0.8rem;"></i>
                 <span>Call Us</span>
             </a>
@@ -6172,6 +6162,100 @@ DARK GREY input backgrounds, calendar date pickers
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const startDateInput = document.getElementById('startDate');
+    const endDateInput = document.getElementById('endDate');
+    const durationInput = document.getElementById('contractDuration');
+
+    function calculateDuration() {
+        const startDate = startDateInput.value;
+        const endDate = endDateInput.value;
+
+        if (!startDate || !endDate) {
+            durationInput.value = 'Select both start and end dates';
+            durationInput.style.color = '#999';
+            return;
+        }
+
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+
+        if (end < start) {
+            durationInput.value = 'End date must be after start date';
+            durationInput.style.color = '#e74c3c';
+            return;
+        }
+
+        // Calculate difference in milliseconds
+        const diffTime = end - start;
+        
+        // Calculate days
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        
+        // Calculate weeks
+        const diffWeeks = Math.floor(diffDays / 7);
+        const remainingDays = diffDays % 7;
+        
+        // Calculate months (approximate)
+        const diffMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+        const remainingDaysInMonth = diffDays - (diffMonths * 30.44); // Approximate days in month
+        
+        // Determine the best display format
+        let durationText = '';
+        
+        if (diffDays === 0) {
+            durationText = 'Same day';
+        } else if (diffDays < 7) {
+            durationText = `${diffDays} day${diffDays > 1 ? 's' : ''}`;
+        } else if (diffDays < 30) {
+            if (remainingDays === 0) {
+                durationText = `${diffWeeks} week${diffWeeks > 1 ? 's' : ''}`;
+            } else {
+                durationText = `${diffWeeks} week${diffWeeks > 1 ? 's' : ''} ${remainingDays} day${remainingDays > 1 ? 's' : ''}`;
+            }
+        } else if (diffDays < 365) {
+            if (diffMonths > 0) {
+                const monthDisplay = diffMonths > 1 ? `${diffMonths} months` : `${diffMonths} month`;
+                const remainingDaysInMonth = diffDays % 30;
+                if (remainingDaysInMonth === 0) {
+                    durationText = monthDisplay;
+                } else {
+                    durationText = `${monthDisplay} ${remainingDaysInMonth} day${remainingDaysInMonth > 1 ? 's' : ''}`;
+                }
+            } else {
+                durationText = `${diffDays} day${diffDays > 1 ? 's' : ''}`;
+            }
+        } else {
+            const years = Math.floor(diffDays / 365);
+            const remainingDaysYear = diffDays % 365;
+            const months = Math.floor(remainingDaysYear / 30);
+            const days = remainingDaysYear % 30;
+            
+            let yearText = `${years} year${years > 1 ? 's' : ''}`;
+            let monthText = months > 0 ? ` ${months} month${months > 1 ? 's' : ''}` : '';
+            let dayText = days > 0 ? ` ${days} day${days > 1 ? 's' : ''}` : '';
+            
+            durationText = yearText + monthText + dayText;
+        }
+        
+        // Also show total days in parentheses
+        const totalDaysText = diffDays > 0 ? ` (${diffDays} total day${diffDays > 1 ? 's' : ''})` : '';
+        
+        durationInput.value = durationText + totalDaysText;
+        durationInput.style.color = '#1A2E4A';
+    }
+
+    // Add event listeners to both date inputs
+    startDateInput.addEventListener('change', calculateDuration);
+    endDateInput.addEventListener('change', calculateDuration);
+    
+    // Also trigger calculation on input change (for keyboard navigation)
+    startDateInput.addEventListener('input', calculateDuration);
+    endDateInput.addEventListener('input', calculateDuration);
+});
+</script>
 
                     </div>
                 </div>
