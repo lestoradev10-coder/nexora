@@ -1,4 +1,33 @@
+# robots.txt for Nexora Solution Hub
+# https://www.nexorasolutionhub.com/robots.txt
+
 User-agent: *
 Allow: /
 
+# Disallow admin or sensitive folders (if any)
+Disallow: /assets/
+Disallow: /admin/
+Disallow: /wp-admin/
+
+# Allow all important pages
+Allow: /index.html
+Allow: /aboutus.html
+Allow: /agricultureextensionservices.html
+Allow: /temporaryworkforcesupply.html
+Allow: /commercialcleaningservices.html
+Allow: /industries.html
+Allow: /faq.html
+Allow: /contact.html
+Allow: /services.html
+Allow: /careers.html
+Allow: /gallery.html
+Allow: /permanenthiring.html
+Allow: /get-a-quote.html
+Allow: /privacy.html
+Allow: /terms.html
+
+# Sitemap location
 Sitemap: https://www.nexorasolutionhub.com/sitemap.xml
+
+# Crawl delay (be gentle to the server)
+Crawl-delay: 1
