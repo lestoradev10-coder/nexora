@@ -8437,5 +8437,37 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Navigation and animations initialized ✅');
 
 });
+
+// ==========================================
+// PURPLE LAYER ADAPTATION - Trigger when 3rd flip completes
+// ==========================================
+document.addEventListener('DOMContentLoaded', function() {
+    // Layer 3 starts at 4.5s and takes 6s to complete = 10.5s
+    // But we want it to turn white when purple is visible
+    // So trigger at 9.5s (when purple is mostly revealed)
+    setTimeout(function() {
+        const tomorrowSpan = document.querySelector('.hero-content h1 span');
+        const paragraph = document.querySelector('.hero-content p');
+        
+        if (tomorrowSpan) tomorrowSpan.classList.add('purple-ready');
+        if (paragraph) paragraph.classList.add('purple-ready');
+        if (primaryBtn) primaryBtn.classList.add('purple-ready');
+        if (secondaryBtn) secondaryBtn.classList.add('purple-ready');
+    }, 5000); // Changed from 7000 to 9500
+});document.addEventListener('DOMContentLoaded', function() {
+    // Layer 3 starts at 4.5s and takes 6s to complete = 10.5s
+    // But we want it to turn white when purple is visible
+    // So trigger at 9.5s (when purple is mostly revealed)
+    setTimeout(function() {
+        
+        const primaryBtn = document.querySelector('.btn-primary');
+        const secondaryBtn = document.querySelector('.btn-secondary');
+        
+        
+        if (primaryBtn) primaryBtn.classList.add('purple-ready');
+        if (secondaryBtn) secondaryBtn.classList.add('purple-ready');
+    }, 7000); // Changed from 7000 to 9500
+});
+
 </script></body>
             </html>
